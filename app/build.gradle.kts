@@ -26,14 +26,17 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_17  // 從 VERSION_11 更新
+        targetCompatibility = JavaVersion.VERSION_17  // 從 VERSION_11 更新
     }
     kotlinOptions {
-        jvmTarget = "11"
+        jvmTarget = "17"  // 從 "11" 更新
     }
     buildFeatures {
         compose = true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = "2.0.0"
     }
 }
 
@@ -66,7 +69,7 @@ dependencies {
     // Room數據庫 - 使用 kapt
     implementation("androidx.room:room-runtime:2.6.1")
     implementation("androidx.room:room-ktx:2.6.1")
-    kapt("androidx.room:room-compiler:2.6.1")  // 使用 kapt
+
 
     // Glide圖片加載
     implementation("com.github.bumptech.glide:glide:4.16.0")
